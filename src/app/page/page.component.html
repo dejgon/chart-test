@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="chart" *ngIf="chart1">
+        <line-chart [data]="datasets[datasetChoosen]" [labels]="labels"></line-chart>
+    </div>
+    <div class="chart" *ngIf="chart2">
+        <bar-chart [data]="datasets[datasetChoosen]" [labels]="labels"></bar-chart>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="changeChart()">Change chart type</button>
+    <label for="exampleFormControlSelect1">Example select</label>
+    <!-- <select class="form-control" id="exampleFormControlSelect1" (change)="setData($event.target.value)">
+        <option *ngFor="let item of datasets; let i=index;" value="{{i}}">Option {{i}}</option>
+    </select> -->
+    <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" [min]="minSlider" [max]="maxSlider" (change)="setData($event.value)"></mat-slider>
+
+    <button type="button" (click)="randomize()">Randomize</button>
+    <button type="button" (click)="pushOne()">Add point</button>
+</div>

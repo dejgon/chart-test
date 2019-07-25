@@ -1,0 +1,9 @@
+<div class="flex-item">
+    <div style="display: block;">
+        <canvas baseChart width="400" height="400" [datasets]="data" [labels]="labels" [options]="lineChartOptions"
+            [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+            [plugins]="lineChartPlugins" (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+            <button type="button" (click)="updddate()">ssdsadsa</button>
+    </div>
+</div>
